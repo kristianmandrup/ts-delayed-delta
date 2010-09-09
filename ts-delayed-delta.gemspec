@@ -39,7 +39,6 @@ Gem::Specification.new do |s|
      "features/support/env.rb",
      "features/thinking_sphinx",
      "features/thinking_sphinx/database.example.yml",
-     "features/thinking_sphinx/database.yml",
      "features/thinking_sphinx/db",
      "features/thinking_sphinx/db/fixtures",
      "features/thinking_sphinx/db/fixtures/delayed_betas.rb",

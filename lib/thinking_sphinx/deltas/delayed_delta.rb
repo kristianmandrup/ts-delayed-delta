@@ -1,9 +1,4 @@
 require 'delayed_job'
-
-if (Delayed::Worker.respond_to?(:backend) && (Delayed::Worker.backend.nil? || Delayed::Worker.backend.blank?))
-  Delayed::Worker.backend = :active_record 
-end
-
 require 'thinking_sphinx'
 require 'thinking_sphinx/deltas/delayed_delta/delta_job'
 require 'thinking_sphinx/deltas/delayed_delta/flag_as_deleted_job'

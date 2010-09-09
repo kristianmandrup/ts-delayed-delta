@@ -1,5 +1,5 @@
 require 'delayed_job'
-require 'delayed_job/delayed/backend/active_record'
+require 'delayed/backend/active_record'
 
 require 'thinking_sphinx'
 require 'thinking_sphinx/deltas/delayed_delta/delta_job'

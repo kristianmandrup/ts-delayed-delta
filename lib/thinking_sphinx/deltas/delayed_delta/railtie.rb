@@ -2,7 +2,7 @@ require 'rails'
 
 class Railtie < Rails::Railtie
   initializer :after_initialize do
-    Delayed::Worker.backend = :active_record
+    #Delayed::Worker.backend = :active_record
   end
 
   rake_tasks do

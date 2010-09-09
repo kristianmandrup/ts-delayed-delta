@@ -4,6 +4,7 @@
 # 
 # As such, this class should not be used for any other tasks.
 # 
+require 'delayed/backend/active_record'
 class ThinkingSphinx::Deltas::Job < ::Delayed::Backend::ActiveRecord::Job
   # Adds a job to the queue, if it doesn't already exist. This is to ensure
   # multiple indexing requests for the same delta index don't get added, as the
@@ -16,7 +17,7 @@ class ThinkingSphinx::Deltas::Job < ::Delayed::Backend::ActiveRecord::Job
   # @param [Integer] priority (0)
   # 
   def self.enqueue(object, priority = 0)
-    ::Delayed::Backend::ActiveRecord::Job.enqueue(object, :priority => priority) unless duplicates_exist(object)
+    ::Delayed::Job.enqueue(object, :priority => priority) unless duplicates_exist(object)
   end
   
   # Remove all Thinking Sphinx/Delayed Delta jobs from the queue. If the

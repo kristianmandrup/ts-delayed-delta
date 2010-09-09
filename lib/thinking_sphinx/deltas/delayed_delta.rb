@@ -1,5 +1,5 @@
 require 'delayed_job'
-require 'delayed/backend/active_record'
+Delayed::Worker.backend = :active_record
 
 require 'thinking_sphinx'
 require 'thinking_sphinx/deltas/delayed_delta/delta_job'

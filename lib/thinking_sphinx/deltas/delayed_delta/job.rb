@@ -4,8 +4,7 @@
 # 
 # As such, this class should not be used for any other tasks.
 # 
-require 'delayed/backend/active_record'
-class ThinkingSphinx::Deltas::Job < ::Delayed::Backend::ActiveRecord::Job
+class ThinkingSphinx::Deltas::Job < ::Delayed::Job
   # Adds a job to the queue, if it doesn't already exist. This is to ensure
   # multiple indexing requests for the same delta index don't get added, as the
   # index only needs to be processed once.

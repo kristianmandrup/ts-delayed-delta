@@ -1,24 +1,29 @@
 h1. Delayed Deltas for Thinking Sphinx
 
-This fork should hopefully make it a bit more Rails 3 compatible, by moving the task to the lib/tasks folder and renaming the file to delayed_delta.rake.
-Using this strategy delta.rake should be merged with the Rails 3 app lib/tasks folder and should thus be recognized by rake.
+This fork should hopefully make it a bit more Rails 3 compatible, by moving the task to the lib/ts-delayed-data/railties folder and renaming the file to delayed_delta.rake.
+I tried to follow the guidelines from here: (Rails 3 plugins)[http://www.themodestrubyist.com/2010/03/16/rails-3-plugins---part-3---rake-tasks-generators-initializers-oh-my/]
 
-h2. Installation
+h2. Changes Oct 13, 2010
+
+I have updated the Rakefile to use the jeweler approach I have always used, with explicit require statements instead of adding allfiles using wildcards.
+Since the README document states it requires Thinking Sphinx 1.3.0 or later, I changed the Rakefile dependency from 2.0.0.rc1 to >= 1.3.
+
+I have also changed the RSpec configuration to use the latest RSpec 2.0.0.rc, but not yet tried if the specs actually run :O
+
+h2. Installation for use in Rails 3 app
 
 You'll need Thinking Sphinx 1.3.0 or later, and Delayed Job as well. The latter is flagged as a dependency.
 
 <pre><code>gem install ts-delayed-delta --source http://gemcutter.org</code></pre>
 
-In your @environment.rb@ file, with the rest of your gem dependencies:
+In your Gemfile, with the rest of your gem dependencies:
 
-<pre><code>config.gem 'ts-delayed-delta',
-  :lib     => 'thinking_sphinx/deltas/delayed_delta'
-  :version => '>= 1.0.0',
-  :source  => 'http://gemcutter.org'</code></pre>
+<pre><code>
+gem 'ts-delayed-delta', '>= 1.1.1', :github  => 'git://github.com:kristianmandrup/ts-delayed-delta.git'</code></pre>
 
-And add the following line to the bottom of your @Rakefile@:
+and just run $ bundle install
 
-<pre><code>require 'thinking_sphinx/deltas/delayed_delta/tasks'</code></pre>
+This will automatically ensure all gems which it depends on are also installed such as the correct (latest) versions of thinking-sphinx and delayed-job.
 
 If this is your first time running Delayed Job, then you're going to need the jobs table migration as well:
 
@@ -54,6 +59,7 @@ h2. Contributors
 * "Maximilian Schulz":http://max.jungeelite.de (Ensuring compatibility with Bundler)
 * "Edgars Beigarts":http://github.com/ebeigarts (Adding intelligent description for tasks)
 * "Alexander Simonov":http://simonov.me/ (Explicit table definition)
+* "Kristian MAndrup":http://github.com/kristianmamndrup (Rails 3 conversion)
 
 h2. Copyright
 

@@ -2,10 +2,10 @@ require 'delayed_job'
 Delayed::Worker.backend = :active_record if Delayed::Worker.respond_to? :backend
 
 require 'thinking_sphinx'
-require 'thinking_sphinx/deltas/delayed_delta/delta_job'
-require 'thinking_sphinx/deltas/delayed_delta/flag_as_deleted_job'
-require 'thinking_sphinx/deltas/delayed_delta/job'
-require 'thinking_sphinx/deltas/delayed_delta/railtie' if defined?(Rails::Railtie)
+require 'ts-delayed-delta/job/delta_job'
+require 'ts-delayed-delta/job/flag_as_deleted_job'
+require 'ts-delayed-delta/job/job'
+require 'ts-delayed-delta/engine' if defined?(Rails::Railtie)
 
 # Delayed Deltas for Thinking Sphinx, using Delayed Job.
 # 

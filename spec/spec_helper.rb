@@ -1,12 +1,7 @@
-$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
-
-require 'rubygems'
-require 'spec'
-require 'spec/autorun'
-
+require 'rspec/core'
 require 'thinking_sphinx'
-require 'thinking_sphinx/deltas/delayed_delta'
+require 'ts-delayed-delta'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   #
 end

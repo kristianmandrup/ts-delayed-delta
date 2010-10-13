@@ -5,7 +5,8 @@ require 'thinking_sphinx'
 require 'ts-delayed-delta/job/delta_job'
 require 'ts-delayed-delta/job/flag_as_deleted_job'
 require 'ts-delayed-delta/job/job'
-require 'ts-delayed-delta/engine' if defined?(Rails::Railtie)
+# require 'ts-delayed-delta/engine' if defined?(Rails::Railtie)
+# require 'ts-delayed-delta/railtie' # if defined?(Rails::Railtie)
 
 # Delayed Deltas for Thinking Sphinx, using Delayed Job.
 # 

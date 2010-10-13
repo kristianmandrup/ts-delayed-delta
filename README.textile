@@ -1,7 +1,7 @@
 h1. Delayed Deltas for Thinking Sphinx
 
 This fork should hopefully make it a bit more Rails 3 compatible, by moving the task to the lib/ts-delayed-data/railties folder and renaming the file to delayed_delta.rake.
-I tried to follow the guidelines from here: (Rails 3 plugins)[http://www.themodestrubyist.com/2010/03/16/rails-3-plugins---part-3---rake-tasks-generators-initializers-oh-my/]
+I tried to follow the guidelines from here: "Rails 3 plugins":http://www.themodestrubyist.com/2010/03/16/rails-3-plugins---part-3---rake-tasks-generators-initializers-oh-my/
 
 h2. Changes Oct 13, 2010
 

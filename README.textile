@@ -25,6 +25,10 @@ and just run $ bundle install
 
 This will automatically ensure all gems which it depends on are also installed such as the correct (latest) versions of thinking-sphinx and delayed-job.
 
+Alternatively, install as a plugin:
+
+$ rails plugin install git://github.com/kristianmandrup/ts-delayed-delta.git
+
 If this is your first time running Delayed Job, then you're going to need the jobs table migration as well:
 
 <pre><code>script/generate delayed_job</code></pre>

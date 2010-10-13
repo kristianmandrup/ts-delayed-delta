@@ -12,6 +12,6 @@ world = Cucumber::ThinkingSphinx::InternalWorld.new
 world.configure_database
 
 require "thinking_sphinx"
-require 'thinking_sphinx/deltas/delayed_delta'
+require 'ts-delayed-data/delayed_delta'
 
 world.setup

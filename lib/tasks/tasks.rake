@@ -1,13 +1,13 @@
 namespace :thinking_sphinx do
-  task :index do
+  task :index do              
+    require 'ts-delayed-delta'    
     ThinkingSphinx::Deltas::Job.cancel_thinking_sphinx_jobs
   end
   
   desc "Process stored delta index requests"
   task :delayed_delta => :app_env do
     require 'delayed/worker'
-    require 'ts-delayed-delta/delayed_delta'
-    
+    require 'ts-delayed-delta'    
     Delayed::Worker.new(
       :min_priority => ENV['MIN_PRIORITY'],
       :max_priority => ENV['MAX_PRIORITY']

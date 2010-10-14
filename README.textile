@@ -6,7 +6,7 @@ I tried to follow the guidelines from here: "Rails 3 plugins":http://www.themode
 h2. Changes Oct 13, 2010
 
 I have updated the Rakefile to use the jeweler approach I have always used, with explicit require statements instead of adding allfiles using wildcards.
-Since the README document states it requires Thinking Sphinx 1.3.0 or later, I changed the Rakefile dependency from 2.0.0.rc1 to >= 1.3.
+Since the README document states it requires Thinking Sphinx 1.3 or later, I changed the Rakefile dependency from 2.0.0.rc1 to >= 1.3.
 
 I have also changed the RSpec configuration to use the latest RSpec 2.0.0.rc, but not yet tried if the specs actually run :O
 
